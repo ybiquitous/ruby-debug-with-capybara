@@ -41,3 +41,7 @@ Default: `chrome`
 ```shell
 BROWSER=firefox bundle exec rspec
 ```
+
+---
+
+See also: <https://gist.github.com/nishio-dens/c64245eb143e9c3b22b9d7b9f93f25d2>
