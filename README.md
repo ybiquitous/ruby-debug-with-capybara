@@ -34,3 +34,10 @@ RUBY_DEBUG_FORK_MODE=child bundle exec rspec -r debug
 RUBY_DEBUG_FORK_MODE=parent bundle exec rspec -r debug
 ```
 
+## Change browser
+
+Default: `chrome`
+
+```shell
+BROWSER=firefox bundle exec rspec
+```

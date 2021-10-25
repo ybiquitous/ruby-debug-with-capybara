@@ -1,5 +1,7 @@
 require "capybara/rspec"
-require "webdrivers/chromedriver"
+require "webdrivers"
+
+BROWSER = ENV["BROWSER"]&.to_sym || :chrome
 
 Capybara.server = :puma
 
@@ -19,7 +21,7 @@ RSpec.configure do |config|
     end
 
     Capybara.register_driver :foo do |app|
-      Capybara::Selenium::Driver.new(app, browser: :chrome).tap do |driver|
+      Capybara::Selenium::Driver.new(app, browser: BROWSER).tap do |driver|
         if screen_size
           driver.browser.manage.window.size = Selenium::WebDriver::Dimension.new(*screen_size)
         end
